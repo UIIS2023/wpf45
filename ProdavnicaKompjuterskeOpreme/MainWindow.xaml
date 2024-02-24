@@ -1,0 +1,120 @@
+﻿<Window x:Class="ProdavnicaKompjuterskeOpreme.MainWindow "
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ProdavnicaKompjuterskeOpreme"
+        mc:Ignorable="d"
+        Title="Computer store" Height="600" Width="950"
+        WindowStartupLocation="CenterScreen"
+        Icon="images\logo.png"
+        ResizeMode="NoResize"
+        WindowStyle="None"
+        Background="Transparent"
+        AllowsTransparency="True"
+        MouseDown="Window_MouseDown"
+        >
+    <Window.Resources>
+        <ControlTemplate x:Key="NoMouseOverButtonTemplate"   
+                 TargetType="Button">
+            <Border Background="{TemplateBinding Background}"  
+          BorderBrush="{TemplateBinding BorderBrush}"  
+          BorderThickness="{TemplateBinding BorderThickness}">
+                <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"  
+                      VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
+            </Border>
+
+            <ControlTemplate.Triggers>
+                <Trigger Property="IsEnabled"  
+             Value="False">
+                    <Setter Property="Background"  
+              Value="{x:Static SystemColors.ControlLightBrush}" />
+                    <Setter Property="Foreground"  
+              Value="{x:Static SystemColors.GrayTextBrush}" />
+                </Trigger>
+            </ControlTemplate.Triggers>
+        </ControlTemplate>
+        <Style TargetType="Button" x:Key="AddChangeDeleteButtons">
+            <Setter Property="Background" Value="#fa477f"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontSize" Value="24"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="Template" Value="{StaticResource NoMouseOverButtonTemplate}"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#ff2f71"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
+    <Border Background="#01042d">
+        <Grid>
+            <Button  HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,20,20,0" Width="24" Click="LogOff_Click" Background="Transparent" 
+                     BorderThickness="0" Cursor="Hand" Template="{StaticResource NoMouseOverButtonTemplate}">
+                <Image Source="images\turnOff.png" />
+            </Button>
+            <DataGrid x:Name="dataGridCenter" VerticalAlignment="Center" HorizontalAlignment="Center" Width="auto" Height="auto" Foreground="#fff" BorderThickness="0"
+               IsReadOnly="True" AlternatingRowBackground="#8345d8" RowBackground="#401aab" CanUserAddRows="False" SelectionUnit="FullRow" SelectionMode="Single">
+                <DataGrid.RowStyle>
+                    <Style TargetType="DataGridRow">
+                        <Setter Property="Background" Value="#401aab"/>
+                        <Setter Property="Foreground" Value="#fff"/>
+                        <Setter Property="FontWeight" Value="Normal"/>
+                    </Style>
+                </DataGrid.RowStyle>
+                <DataGrid.ColumnHeaderStyle>
+                    <Style TargetType="DataGridColumnHeader">
+                        <Setter Property="Background" Value="#fa477f"/>
+                        <Setter Property="Foreground" Value="#fff"/>
+                        <Setter Property="FontSize" Value="18"/>
+                    </Style>
+                </DataGrid.ColumnHeaderStyle>
+            </DataGrid>
+            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Top" Height="auto" Width="auto" Margin="0,15,0,0" Orientation="Horizontal" UseLayoutRounding="False" >
+                <StackPanel.Resources>
+                    <Style TargetType="{x:Type Button}">
+                        <Setter Property="Margin" Value="10,0,0,0"/>
+                        <Setter Property="Cursor" Value="Hand" />
+                        <Setter Property="BorderThickness" Value="0" />
+                        <Setter Property="Foreground" Value="#fff" />
+                        <Setter Property="Background" Value="Transparent" />
+                        <Setter Property="Template" Value="{StaticResource NoMouseOverButtonTemplate}" />
+                    </Style>
+                </StackPanel.Resources>
+                <Button x:Name="btnProducts" Content="Products" HorizontalAlignment="Left" VerticalAlignment="Top" Height="30" Width="80" Click="btnProducts_Click" />
+                <Button x:Name="btnCustomer" Content="Customer" VerticalAlignment="Bottom" Height="30" HorizontalAlignment="Right" Width="80" Click="btnCustomer_Click" />
+                <Button x:Name="btnBrands" Content="Brands" VerticalAlignment="Bottom" Height="30" HorizontalAlignment="Right" Width="80" Click="btnBrands_Click" />
+                <Button x:Name="btnModels" Content="Models" VerticalAlignment="Bottom" Height="30" HorizontalAlignment="Right" Width="80" Click="btnModels_Click" />
+                <Button x:Name="btnType" Content="Product types" VerticalAlignment="Bottom" Height="30" HorizontalAlignment="Right" Width="80" Click="btnType_Click" />
+                <Button x:Name="btnPayment" Content="Payment" VerticalAlignment="Bottom" Height="30" HorizontalAlignment="Right" Width="80" Click="btnPayment_Click" />
+                <Button x:Name="btnServis" Content="Servis" VerticalAlignment="Bottom" Height="30" HorizontalAlignment="Right" Width="80" Click="btnServis_Click" />
+                <Button x:Name="btnWarranty" Content="Warranty" VerticalAlignment="Bottom" Height="30" HorizontalAlignment="Right" Width="80" Click="btnWarranty_Click" />
+            </StackPanel>
+            <Button x:Name="btnAdd" Content="Add" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="-250,0,0,10" Height="35" Width="100" Click="btnAdd_Click" BorderThickness="0" 
+                    FontSize="24" Cursor="Hand" Template="{StaticResource NoMouseOverButtonTemplate}" Style="{StaticResource AddChangeDeleteButtons}">
+                <Button.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="10"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+            <Button x:Name="btnChange" Content="Change" VerticalAlignment="Bottom" Height="35" HorizontalAlignment="Center" Margin="0,0,0,10" Width="100" Click="btnChange_Click" 
+                    BorderThickness="0" FontSize="24" Cursor="Hand" Template="{StaticResource NoMouseOverButtonTemplate}" Style="{StaticResource AddChangeDeleteButtons}">
+                <Button.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="10"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+            <Button x:Name="btnDelete" Content="Delete" VerticalAlignment="Bottom" Height="35" HorizontalAlignment="Center" Margin="250,0,0,10" Width="100" Click="btnDelete_Click" BorderThickness="0" 
+                    Cursor="Hand" Template="{StaticResource NoMouseOverButtonTemplate}"  Style="{StaticResource AddChangeDeleteButtons}">
+                <Button.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="10"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+        </Grid>
+    </Border>
+</Window>

@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup />
+  <ItemGroup>
+    <ApplicationDefinition Update="App.xaml">
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="authentication\Login.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="authentication\Registration.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="forms\frameCustomer.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="forms\frameBrand.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="forms\frameModel.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="forms\framePayment.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="forms\frameProduct.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="forms\frameProductType.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="forms\frameServis.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="forms\frameWarranty.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="authentication\Login.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="authentication\Registration.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="forms\frameCustomer.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="forms\frameBrand.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="forms\frameModel.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="forms\framePayment.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="forms\frameProduct.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="forms\frameProductType.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="forms\frameServis.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="forms\frameWarranty.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="MainWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+</Project>
